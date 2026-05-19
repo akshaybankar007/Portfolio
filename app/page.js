@@ -16,11 +16,9 @@ export default function Home() {
           <p className="hero-greeting">
             Hi, I'm <span className="hero-greeting-script">Akshay</span>
           </p>
-          <h1 className="hero-title">Software Developer</h1>
+          <h1 className="hero-title">Full Stack Developer</h1>
           <p className="hero-desc">
-            Software Engineer with expertise in Java, Go, and Distributed Systems.
-            Specialist in optimizing high-concurrency backend infrastructure and
-            scalable AI solutions.
+            Full Stack Developer with expertise in React.js, Next.js, Node.js, Express.js, MongoDB, and REST APIs. Skilled in building scalable web applications and deploying them on cloud platforms.
           </p>
 
           <div className="hero-socials">
@@ -62,7 +60,7 @@ export default function Home() {
             <div className="orb-photo-small-tl" />
             <div className="orb-photo-small-br" />
             <Image
-              src="/photo.jpeg"
+              src="/photo.png"
               alt="Akshay Bankar"
               fill
               sizes="(max-width: 900px) 300px, 420px"
