@@ -1,21 +1,17 @@
 {
-  "name": "akshay-bankar-portfolio",
+  "name": "akshay-bankar-mern-portfolio",
   "version": "1.0.0",
   "private": true,
+  "description": "MERN stack portfolio for Akshay Bankar.",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "next": "14.2.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "client": "npm run dev --prefix client",
+    "server": "npm run dev --prefix server",
+    "build": "npm run build --prefix client",
+    "start": "npm start --prefix server",
+    "install-all": "npm install && npm install --prefix client && npm install --prefix server"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "typescript": "^5"
+    "concurrently": "^9.1.2"
   }
 }

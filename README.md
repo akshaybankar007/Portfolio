@@ -1,21 +1,67 @@
-# Software Engineering Portfolio | Akshay Bankar
+# MERN Portfolio | Akshay Bankar
 
-A high-performance personal portfolio built with **Next.js**, showcasing expertise in backend systems, distributed infrastructure, and scalable AI solutions.
+Personal portfolio rebuilt with the MERN stack:
 
-## 🚀 Technical Stack
-* **Frontend:** Next.js (App Router), React, Tailwind CSS
-* **Architecture:** Modular Component Structure, Responsive Design
-* **Deployment:** Vercel
+- MongoDB stores contact form messages.
+- Express and Node.js expose the backend API.
+- React powers the frontend UI.
+- Vite runs the React development server.
 
-## 🛠️ Key Features
-* **Optimized Performance:** Fast load times and efficient rendering.
-* **Responsive UI:** Fully compatible with mobile, tablet, and desktop.
-* **Dynamic Sections:** Custom-built About, Experience, Projects, and Skills modules.
-* **Contact Integration:** Direct links to LinkedIn, GitHub, and Email.
+## Project Structure
 
-## 📂 Project Structure
 ```text
-├── app/            # Next.js App Router (Routes & Pages)
-├── components/     # Reusable UI Components (Navbar, Footer, etc.)
-├── public/         # Static assets (Images, Resume PDF)
-└── globals.css     # Global styling and design tokens
+client/         React frontend
+server/         Express API and MongoDB models
+public/         Static assets used by the frontend
+```
+
+## Local Setup
+
+1. Install dependencies:
+
+```bash
+npm run install-all
+```
+
+2. Create a server environment file:
+
+```bash
+copy server\.env.example server\.env
+```
+
+3. Update `server/.env` with your MongoDB connection string.
+
+4. Run the full MERN app:
+
+```bash
+npm run dev
+```
+
+The frontend runs on `http://localhost:5173`.
+The backend runs on `http://localhost:5000`.
+
+## Useful Commands
+
+```bash
+npm run client
+npm run server
+npm run build
+npm start
+```
+
+## API Routes
+
+```text
+GET  /api/health
+POST /api/contact
+```
+
+`POST /api/contact` accepts:
+
+```json
+{
+  "name": "Your Name",
+  "email": "you@example.com",
+  "message": "Your message"
+}
+```

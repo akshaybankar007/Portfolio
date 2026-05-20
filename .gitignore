@@ -1,9 +1,10 @@
 # Dependencies
 node_modules/
 
-# Next.js build output
+# Framework build output
 .next/
 out/
+dist/
 
 # Production build
 build/
