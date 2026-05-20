@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import SocialLinks from '../components/SocialLinks.jsx';
 import { profile } from '../data/portfolio.js';

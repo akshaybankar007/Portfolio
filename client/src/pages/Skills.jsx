@@ -1,3 +1,4 @@
+import React from 'react';
 import { skills } from '../data/portfolio.js';
 
 export default function Skills() {

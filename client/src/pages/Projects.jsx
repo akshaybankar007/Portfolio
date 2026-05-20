@@ -1,3 +1,4 @@
+import React from 'react';
 import { FlaskConical, Network } from 'lucide-react';
 import { projects } from '../data/portfolio.js';
 

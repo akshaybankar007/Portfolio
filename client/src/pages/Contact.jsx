@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import { profile } from '../data/portfolio.js';
 

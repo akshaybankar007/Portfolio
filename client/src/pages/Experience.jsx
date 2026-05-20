@@ -1,3 +1,4 @@
+import React from 'react';
 import { experiences } from '../data/portfolio.js';
 
 export default function Experience() {

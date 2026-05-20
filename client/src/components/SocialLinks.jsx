@@ -1,3 +1,4 @@
+import React from 'react';
 import { Github, Instagram, Linkedin, Mail } from 'lucide-react';
 import { profile } from '../data/portfolio.js';
 
