@@ -9,6 +9,9 @@ dist/
 # Production build
 build/
 
+# Local development data
+server/data/
+
 # Environment variables
 .env
 .env.local

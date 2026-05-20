@@ -30,6 +30,8 @@ copy server\.env.example server\.env
 ```
 
 3. Update `server/.env` with your MongoDB connection string.
+   If MongoDB is not available locally yet, the app still runs and stores contact
+   messages in `server/data/contact-messages.json` during development.
 
 4. Run the full MERN app:
 
@@ -39,6 +41,22 @@ npm run dev
 
 The frontend runs on `http://localhost:5173`.
 The backend runs on `http://localhost:5000`.
+
+## Database Setup
+
+For local development, the default `.env` points to:
+
+```env
+MONGO_URI=mongodb://127.0.0.1:27017/akshay-portfolio
+```
+
+If MongoDB is not running, the server automatically falls back to local JSON
+storage so you can keep working. For deployment, use MongoDB Atlas and set:
+
+```env
+REQUIRE_MONGO=true
+MONGO_URI=your_mongodb_atlas_connection_string
+```
 
 ## Useful Commands
 
