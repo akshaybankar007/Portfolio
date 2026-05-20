@@ -1,12 +1,16 @@
 # Dependencies
 node_modules/
 
-# Next.js build output
+# Framework build output
 .next/
 out/
+dist/
 
 # Production build
 build/
+
+# Local development data
+server/data/
 
 # Environment variables
 .env

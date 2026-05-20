@@ -1,9 +1,7 @@
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="footer">
-      <p>© {currentYear} Akshay Bankar </p>
+      <p>&copy; {new Date().getFullYear()} Akshay Bankar</p>
     </footer>
   );
 }
