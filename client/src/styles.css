@@ -394,3 +394,8 @@ button, input, textarea { font: inherit; }
   .timeline-card { padding: 20px; }
   .contact-form { padding: 22px; }
 }
+/* Target and completely remove the small circles */
+.orb-photo-small-tl,
+.orb-photo-small-br {
+  display: none !important;
+}
