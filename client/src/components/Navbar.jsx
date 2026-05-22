@@ -28,8 +28,7 @@ export default function Navbar() {
     <nav className="navbar">
       <Link to="/" className="nav-logo-container" onClick={closeMobileMenu}>
         <img src="/icon.png" alt="Engineer Icon" className="nav-icon" />
-        <span className="nav-logo-text">
-          <span>Ak</span>shay Bankar
+        <span className="nav-logo-text">Akshay Bankar
         </span>
       </Link>
 
