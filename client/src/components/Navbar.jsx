@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link, NavLink } from 'react-router-dom';
+import { href, Link, NavLink } from 'react-router-dom';
 
+//later I have to add more buttons
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/experience', label: 'Experience' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/skills', label: 'Skills' },
+  { href: '/', label: 'Home'},
+  { href: '/about', label: 'About'},
+  { href: '/experience', label: 'Experience'},
+  { href: '/projects', label: 'Projects'},
+  { href: '/skills', label: 'Skills'},
 ];
 
 export default function Navbar() {
@@ -23,13 +24,11 @@ export default function Navbar() {
   }, []);
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
-
   return (
     <nav className="navbar">
       <Link to="/" className="nav-logo-container" onClick={closeMobileMenu}>
-        <img src="/icon.png" alt="Engineer Icon" className="nav-icon" />
-        <span className="nav-logo-text">Akshay Bankar
-        </span>
+        <img src="/icon.png" alt="Akshay's Icon" className="nav-icon" />
+        <span className="nav-logo-text">Akshay Bankar</span>
       </Link>
 
       <button
@@ -40,6 +39,7 @@ export default function Navbar() {
       >
         {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
+
 
       <ul className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
         {navLinks.map((link) => (
@@ -54,6 +54,7 @@ export default function Navbar() {
           </li>
         ))}
       </ul>
+
 
       <Link to="/contact" onClick={closeMobileMenu}>
         <button className="nav-cta" type="button">
