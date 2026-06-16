@@ -1,11 +1,11 @@
 import React from 'react';
-import { Github, Instagram, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Instagram, Mail } from 'lucide-react';
 import { profile } from '../data/portfolio.js';
 
 const links = [
   { href: profile.linkedin, label: 'LinkedIn', Icon: Linkedin },
-  { href: profile.instagram, label: 'Instagram', Icon: Instagram },
   { href: `mailto:${profile.email}`, label: 'Email', Icon: Mail },
+  { href: profile.instagram, label: 'Instagram', Icon: Instagram },
   { href: profile.github, label: 'GitHub', Icon: Github },
 ];
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { href, Link, NavLink } from 'react-router-dom';
 
-//later I have to add more buttons
+//later I have to add more
 const navLinks = [
   { href: '/', label: 'Home'},
   { href: '/about', label: 'About'},
@@ -47,8 +47,7 @@ export default function Navbar() {
             <NavLink
               to={link.href}
               className={({ isActive }) => (isActive ? 'active' : '')}
-              onClick={closeMobileMenu}
-            >
+              onClick={closeMobileMenu}>
               {link.label}
             </NavLink>
           </li>
