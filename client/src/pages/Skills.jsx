@@ -12,26 +12,30 @@ export default function Skills() {
         setLoading(false);
       })
       .catch((err) => {
-        console.error('Failed to fetch skills:', err);
+        console.error(err);
         setLoading(false);
       });
   }, []);
 
   return (
-    <section className="section section-alt" id="skills">
-      <div className="section-inner">
-        <h2 className="section-title">
-          Technical <span>Skills</span>
+    <section className="py-24 px-6 bg-[#020202]" id="skills">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-16 tracking-tight">
+          Technical <span className="text-red-600">Skills</span>
         </h2>
 
         {loading ? (
-          <p style={{ color: 'white', textAlign: 'center' }}>Loading buzzwords...</p>
+          <div className="flex justify-center"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-red-600"></div></div>
         ) : (
-          <div className="skills-grid">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skills.map((skill) => (
-              <article className="skill-card" key={skill._id}>
-                <span className="skill-label">{skill.label}</span>
-                <p className="skill-items">{skill.items}</p>
+              <article key={skill._id} className="bg-[#0a0a0a] border border-gray-800 p-6 rounded-2xl hover:border-red-600/30 hover:bg-[#0f0f0f] transition-all group">
+                <span className="block text-xs font-black text-red-600 uppercase tracking-[0.2em] mb-4 group-hover:text-red-500">
+                  {skill.label}
+                </span>
+                <p className="text-gray-300 font-medium leading-relaxed">
+                  {skill.items}
+                </p>
               </article>
             ))}
           </div>
