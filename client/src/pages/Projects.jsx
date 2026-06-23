@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { FlaskConical, Network } from 'lucide-react';
-
-const icons = [FlaskConical, Network];
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
@@ -21,39 +18,40 @@ export default function Projects() {
   }, []);
 
   return (
-    <section className="py-24 px-6" id="projects">
+    <section className="py-32 px-6 md:px-12" id="projects">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-16 tracking-tight">
-          Research &amp; <span className="text-red-600">Projects</span>
-        </h2>
+        <div className="mb-16 border-l-4 border-cyan-500 pl-6">
+          <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase">
+            Compiled Work
+          </h2>
+          <p className="text-gray-500 mt-2 font-mono text-sm">Target directory: /usr/local/projects</p>
+        </div>
         
         {loading ? (
-          <div className="flex justify-center"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-red-600"></div></div>
+          <div className="flex justify-center"><div className="animate-spin h-10 w-10 border-4 border-cyan-500 border-t-transparent"></div></div>
         ) : (
           <div className="grid md:grid-cols-2 gap-8">
-            {projects.map((project, index) => {
-              const Icon = icons[index % icons.length];
-              return (
-                <article key={project._id} className="group relative bg-[#0a0a0a] border border-gray-800 p-8 rounded-2xl hover:border-red-600/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(220,38,38,0.1)]">
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-600/5 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <div className="w-14 h-14 flex items-center justify-center bg-red-600/10 border border-red-600/20 text-red-500 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                      <Icon size={28} />
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-4">{project.title}</h3>
-                    <p className="text-gray-400 leading-relaxed mb-6">{project.description}</p>
-                    {project.highlight && <div className="text-xs font-bold text-red-500 uppercase tracking-widest mb-6">{project.highlight}</div>}
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <span key={tag} className="px-3 py-1 bg-[#141414] border border-gray-800 rounded-full text-xs font-semibold text-gray-300 group-hover:border-gray-700 transition-colors">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+            {projects.map((project) => (
+              <article key={project._id} className="bg-[#0a0a0a] border border-gray-800 p-8 hover:border-cyan-500/50 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-16 h-16 bg-cyan-500/10 blur-2xl group-hover:bg-cyan-500/30 transition-all"></div>
+                
+                <div className="z-10">
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">{project.title}</h3>
+                  <p className="text-gray-400 leading-relaxed text-sm">{project.description}</p>
+                </div>
+                
+                <div className="mt-8 z-10">
+                  {project.highlight && <div className="text-cyan-500 text-xs font-bold uppercase tracking-wider mb-4 border border-cyan-500/30 inline-block px-3 py-1 bg-cyan-500/10">{project.highlight}</div>}
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="px-2 py-1 bg-gray-900 border border-gray-800 text-xs font-mono text-gray-300">
+                        {tag}
+                      </span>
+                    ))}
                   </div>
-                </article>
-              );
-            })}
+                </div>
+              </article>
+            ))}
           </div>
         )}
       </div>

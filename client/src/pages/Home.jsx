@@ -5,46 +5,36 @@ import { profile } from '../data/portfolio.js';
 
 export default function Home() {
   return (
-    <section className="min-h-[85vh] flex items-center justify-center px-6" id="home">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        
-        {/* Left Column */}
-        <div className="flex flex-col items-start text-left space-y-6">
-          <p className="text-xl md:text-2xl text-gray-400 font-medium">
-            Hi, I'm <span className="text-red-500 italic font-serif">Akshay</span>
-          </p>
-          <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight">
-            {profile.role.split(' ').map((word, i) => 
-              word === 'MERN' || word === 'Developer' ? <span key={i} className="text-red-600">{word} </span> : word + ' '
-            )}
-          </h1>
-          <p className="text-lg text-gray-400 leading-relaxed max-w-lg">
-            Full Stack Developer specializing in React.js, Node.js, MongoDB, and high-concurrency backend systems. I build architectures that survive scale, not just bootcamps.
-          </p>
+    <section className="min-h-screen flex flex-col items-start justify-center px-6 md:px-12 relative overflow-hidden" id="home">
+      {/* Background glow effect */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-600/10 rounded-full blur-[120px] pointer-events-none"></div>
 
+      <div className="max-w-5xl mx-auto w-full z-10 mt-20">
+        <p className="text-cyan-500 font-bold tracking-widest uppercase mb-4 pl-1">System Override // Initiated</p>
+        
+        <h1 className="text-6xl md:text-9xl font-black text-white leading-none tracking-tighter mb-6">
+          BUILDING <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">
+            THE FUTURE.
+          </span>
+        </h1>
+        
+        <p className="text-lg md:text-xl text-gray-400 font-medium max-w-2xl mb-10 leading-relaxed">
+          I architect distributed systems and engineer high-concurrency web applications. Zero bloat. Maximum performance.
+        </p>
+        
+        <div className="flex flex-wrap items-center gap-6">
+          <Link to="/projects" className="px-8 py-4 bg-cyan-500 text-black font-bold uppercase tracking-wider hover:bg-cyan-400 transition-colors shadow-[0_0_20px_rgba(34,211,238,0.4)]">
+            Execute Portfolio
+          </Link>
+          <a href={profile.resume} target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-transparent border border-gray-700 text-white font-bold uppercase tracking-wider hover:border-cyan-500 hover:text-cyan-400 transition-all">
+            Parse Resume_
+          </a>
+        </div>
+
+        <div className="pt-20">
           <SocialLinks />
-
-          <div className="flex flex-wrap gap-4 pt-4">
-            <Link to="/contact" className="px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition-all shadow-[0_0_20px_rgba(220,38,38,0.2)] hover:-translate-y-1">
-              Inquire
-            </Link>
-            <a href={profile.resume} target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-transparent border-2 border-gray-700 hover:border-red-500 text-white font-bold rounded-lg transition-all hover:bg-red-500/10 hover:-translate-y-1">
-              Resume
-            </a>
-          </div>
         </div>
-
-        {/* Right Column (Photo) */}
-        <div className="flex justify-center md:justify-end relative">
-          <div className="absolute inset-0 bg-red-600 blur-[100px] opacity-20 rounded-full w-[300px] h-[300px] m-auto"></div>
-          <img 
-            src="/Photo.png" 
-            alt="Akshay Bankar" 
-            className="w-[280px] h-[280px] md:w-[350px] md:h-[350px] object-cover rounded-full border-4 border-gray-800 shadow-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-500"
-            onError={(e) => { e.target.src = 'https://via.placeholder.com/350?text=Missing+Photo'; }}
-          />
-        </div>
-        
       </div>
     </section>
   );
