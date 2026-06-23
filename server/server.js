@@ -5,6 +5,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { connectDB } from './config/db.js';
 import contactRoutes from './routes/contactRoutes.js';
+import portfolioRoutes from './routes/portfolioRoutes.js';
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.get('/api/health', (req, res) => {
 });
 
 app.use('/api/contact', contactRoutes);
+app.use('/api/portfolio', portfolioRoutes);
 
 if (process.env.NODE_ENV === 'production') {
   const clientBuildPath = path.join(__dirname, '../client/dist');
