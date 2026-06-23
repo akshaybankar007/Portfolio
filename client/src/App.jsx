@@ -13,7 +13,7 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="pt-24 min-h-screen bg-black text-gray-200 font-sans selection:bg-red-500 selection:text-white">
         <Routes>
           <Route path="/" element= { <Home />} />
           <Route path="/about" element= { <About />} />

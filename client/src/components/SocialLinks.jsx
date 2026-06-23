@@ -11,13 +11,13 @@ const links = [
 
 export default function SocialLinks() {
   return (
-    <div className="hero-socials">
+    <div className="flex items-center gap-4">
       {links.map(({ href, label, Icon }) => (
         <a
           href={href}
           target={href.startsWith('mailto:') ? undefined : '_blank'}
           rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
-          className="social-icon"
+          className="flex items-center justify-center w-12 h-12 rounded-full border border-gray-700 text-gray-400 hover:text-white hover:border-red-500 hover:bg-red-500/10 hover:-translate-y-1 transition-all"
           aria-label={label}
           key={label}
         >
