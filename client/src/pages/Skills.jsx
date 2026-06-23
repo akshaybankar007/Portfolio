@@ -1,5 +1,40 @@
 import React, { useState, useEffect } from 'react';
 
+const SkillCard = ({ skillGroup }) => {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
+
+  return (
+    <div 
+      onMouseMove={handleMouseMove}
+      className="bg-[#0a0a0a] border border-gray-800 p-6 hover:border-cyan-500/50 transition-all duration-300 group relative overflow-hidden rounded-xl"
+    >
+      {/* Spotlight Effect */}
+      <div 
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"
+        style={{ background: `radial-gradient(400px circle at ${mousePos.x}px ${mousePos.y}px, rgba(34,211,238,0.12), transparent 40%)` }}
+      />
+
+      <div className="relative z-10">
+        <h3 className="text-cyan-500 font-mono text-sm uppercase mb-4 pb-2 border-b border-gray-800 group-hover:border-cyan-500/30 transition-colors">
+          ./{skillGroup.label.toLowerCase().replace(/ /g, '_')}
+        </h3>
+        <div className="flex flex-wrap gap-2">
+          {skillGroup.items.split(',').map((skill, i) => (
+            <span key={i} className="text-gray-300 text-sm bg-[#030303] px-3 py-1 border border-gray-800 rounded-sm">
+              {skill.trim()}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default function Skills() {
   const [skills, setSkills] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -31,18 +66,7 @@ export default function Skills() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skills.map((skillGroup, index) => (
-              <div key={skillGroup._id || index} className="bg-[#0a0a0a] border border-gray-800 p-6 hover:shadow-[0_0_30px_rgba(34,211,238,0.1)] transition-all group">
-                <h3 className="text-cyan-500 font-mono text-sm uppercase mb-4 pb-2 border-b border-gray-800 group-hover:border-cyan-500/30 transition-colors">
-                  ./{skillGroup.label.toLowerCase().replace(/ /g, '_')}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {skillGroup.items.split(',').map((skill, i) => (
-                    <span key={i} className="text-gray-300 text-sm bg-gray-900 px-3 py-1 border border-gray-800 group-hover:border-cyan-900 transition-colors">
-                      {skill.trim()}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              <SkillCard key={skillGroup._id || index} skillGroup={skillGroup} />
             ))}
           </div>
         )}

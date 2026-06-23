@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SocialLinks from '../components/SocialLinks.jsx';
 import { profile } from '../data/portfolio.js';
 
 export default function Home() {
-  return (
-    <section className="min-h-screen flex flex-col items-start justify-center px-6 md:px-12 relative overflow-hidden" id="home">
-      {/* Background glow effect */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+  const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 });
 
-      <div className="max-w-5xl mx-auto w-full z-10 mt-20">
+  const handleMouseMove = (e) => {
+    setMousePos({ x: e.clientX, y: e.clientY });
+  };
+
+  return (
+    <section 
+      onMouseMove={handleMouseMove}
+      className="min-h-screen flex flex-col items-start justify-center px-6 md:px-12 relative overflow-hidden group" 
+      id="home"
+    >
+      {/* Dynamic Ambient Glow */}
+      <div 
+        className="absolute inset-0 transition-opacity duration-500 pointer-events-none z-0"
+        style={{ background: `radial-gradient(1200px circle at ${mousePos.x}px ${mousePos.y}px, rgba(34,211,238,0.04), transparent 50%)` }}
+      />
+
+      <div className="max-w-5xl mx-auto w-full z-10 mt-20 relative">
         <p className="text-cyan-500 font-bold tracking-widest uppercase mb-4 pl-1">System Override // Initiated</p>
         
         <h1 className="text-6xl md:text-9xl font-black text-white leading-none tracking-tighter mb-6">
@@ -24,15 +37,15 @@ export default function Home() {
         </p>
         
         <div className="flex flex-wrap items-center gap-6">
-          <Link to="/projects" className="px-8 py-4 bg-cyan-500 text-black font-bold uppercase tracking-wider hover:bg-cyan-400 transition-colors shadow-[0_0_20px_rgba(34,211,238,0.4)]">
+          <Link to="/projects" className="px-8 py-4 bg-cyan-500 text-black font-bold uppercase tracking-wider hover:bg-cyan-400 transition-colors shadow-[0_0_20px_rgba(34,211,238,0.4)] relative z-20">
             Execute Portfolio
           </Link>
-          <a href={profile.resume} target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-transparent border border-gray-700 text-white font-bold uppercase tracking-wider hover:border-cyan-500 hover:text-cyan-400 transition-all">
+          <a href={profile.resume} target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-transparent border border-gray-700 text-white font-bold uppercase tracking-wider hover:border-cyan-500 hover:text-cyan-400 transition-all relative z-20">
             Parse Resume_
           </a>
         </div>
 
-        <div className="pt-20">
+        <div className="pt-20 relative z-20">
           <SocialLinks />
         </div>
       </div>
