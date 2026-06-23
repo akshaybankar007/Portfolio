@@ -8,25 +8,27 @@ export default function About() {
       <div className="max-w-5xl mx-auto w-full z-10">
         <div className="mb-12 border-l-4 border-cyan-500 pl-6">
           <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase">
-            Identity<span className="text-cyan-500">_</span>
+            About Me<span className="text-cyan-500">_</span>
           </h2>
-          <p className="text-gray-500 mt-2 font-mono text-sm">Target directory: /usr/local/bin/developer</p>
         </div>
 
         <div className="bg-[#0a0a0a] border border-gray-800 p-8 md:p-12 hover:border-cyan-500/30 transition-colors relative group">
-          <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-cyan-500/0 via-cyan-500/50 to-cyan-500/0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          
-          <div className="font-mono text-gray-400 text-sm md:text-base leading-loose">
-            <p className="text-cyan-400 mb-4">~> ./execute_biography.sh</p>
+          <div className="text-gray-400 text-sm md:text-base leading-loose font-mono">
+            <p className="mb-6 border-b border-gray-800 pb-4">
+              <span className="text-cyan-500 font-bold uppercase tracking-wider">Name:</span> <span className="text-white">Akshay Yogeshwar Bankar</span><br />
+              <span className="text-cyan-500 font-bold uppercase tracking-wider">Base:</span> <span className="text-white">Nagpur, Maharashtra</span><br />
+              <span className="text-cyan-500 font-bold uppercase tracking-wider">Education:</span> <span className="text-white">B.Tech in CSE, GNIET (2022-2026)</span>
+            </p>
+            
             <p className="mb-4">
-              <span className="text-white">Log [01]:</span> Initializing Software Engineer sequence...<br />
-              <span className="text-white">Log [02]:</span> Current phase: Mastering JavaScript mechanics before injecting the MERN stack protocol.<br />
-              <span className="text-white">Log [03]:</span> Base parameters set in Nagpur, India.
+              I am a Software Engineering student heavily focused on transitioning into full-stack architecture. My current active loop involves mastering JavaScript mechanics before fully deploying into the MERN stack (MongoDB, Express.js, React, Node.js).
             </p>
             <p className="mb-4">
-              <span className="text-white">Objective:</span> Secure a high-impact engineering node at a software-based entity. I don't just write syntax; I engineer logic that scales, optimizes hardware constraints, and refuses to crash gracefully.
+              Beyond standard web interfaces, I build data-driven solutions like LuminaDx, an AI-assisted multimodal diagnostic framework. 
             </p>
-            <p className="text-cyan-500 animate-pulse mt-8">_ Status: Awaiting deployment instructions.</p>
+            <p className="mt-8 text-white font-bold">
+              Current Objective: Secure a high-impact Software Engineer role to build scalable systems that don't crash.
+            </p>
           </div>
         </div>
       </div>
