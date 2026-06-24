@@ -10,10 +10,7 @@ export default function CustomCursor() {
     };
 
     const onMouseOver = (e) => {
-      const isInteractive = e.target.tagName.toLowerCase() === 'a' || 
-                            e.target.tagName.toLowerCase() === 'button' || 
-                            e.target.closest('a') || 
-                            e.target.closest('button');
+      const isInteractive = e.target.tagName.toLowerCase() === 'a' ||  e.target.tagName.toLowerCase() === 'button' ||  e.target.closest('a') || e.target.closest('button');
       setIsHovering(isInteractive);
     };
 
@@ -26,22 +23,25 @@ export default function CustomCursor() {
     };
   }, []);
 
+
+  //this is the cursor customisation room
   return (
-    <div className="hidden md:block pointer-events-none z-[9999]">
-      {/* Inner precise dot */}
+    <div className="pointer-events-none z-9999">
+
+      {/* Inner dot */}
       <div 
-        className="fixed top-0 left-0 w-2 h-2 bg-cyan-400 rounded-full transition-all duration-75 ease-out shadow-[0_0_10px_rgba(34,211,238,0.8)]"
+        className="fixed z-9999 top-0 left-0 w-1.5 h-1.5 bg-cyan-400 rounded-full transition-all duration-75 ease-out shadow-[0_0_10px_rgba(34,211,238,0.8)] pointer-events-none"
         style={{ 
-          transform: `translate3d(${position.x - 4}px, ${position.y - 4}px, 0) scale(${isHovering ? 0 : 1})`,
+          transform: `translate3d(${position.x - 3}px, ${position.y - 3}px, 0) scale(${isHovering ? 0 : 1})`,
           opacity: position.x === -100 ? 0 : 1
         }}
       ></div>
+
       {/* Outer ring */}
       <div 
-        className="fixed top-0 left-0 w-10 h-10 border border-cyan-500 rounded-full transition-all duration-300 ease-out flex items-center justify-center backdrop-invert-[0.1]"
+        className="fixed z-9999 top-0 left-0 w-4.5 h-4.5 border border-cyan-500 rounded-full transition-all duration-300 ease-out flex items-center justify-center backdrop-invert-[0.1] pointer-events-none"
         style={{ 
-          transform: `translate3d(${position.x - 20}px, ${position.y - 20}px, 0) scale(${isHovering ? 1.5 : 1})`,
-          backgroundColor: isHovering ? 'rgba(34, 211, 238, 0.1)' : 'transparent',
+          transform: `translate3d(${position.x - 9}px, ${position.y - 9}px, 0) scale(${isHovering ? 1.5 : 1})`,
           opacity: position.x === -100 ? 0 : 1
         }}
       ></div>
