@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
-body{
+body {
     cursor: none;
+    font-family: 'Inter', sans-serif;
 }
 
-a, button, input, textarea, select{
+a, button, input, textarea, select {
     cursor: none;
 }

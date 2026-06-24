@@ -17,7 +17,7 @@ export default function Navbar() {
     <nav className="fixed w-full z-50 top-0 bg-[#030303] border-b border-gray-800">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         <Link to="/" className="text-2xl font-bold text-white tracking-widest hover:text-cyan-400 transition-colors" onClick={closeMenu}>
-          AKSHAY<span className="text-cyan-500">_</span>
+          AKSHAY BANKAR<span className="text-cyan-500">_</span>
         </Link>
         
         <button className="md:hidden text-cyan-400" onClick={() => setIsOpen(!isOpen)}>
@@ -41,9 +41,7 @@ export default function Navbar() {
                to="/contact"
                onClick={closeMenu}
                className="px-6 py-2 bg-transparent border-2 border-cyan-500 text-cyan-500 text-sm font-bold uppercase rounded hover:bg-cyan-500 hover:text-black transition-all shadow-[0_0_15px_rgba(34,211,238,0.3)] hover:shadow-[0_0_25px_rgba(34,211,238,0.6)]"
-            >
-              Initialize Contact
-            </Link>
+            >Contact </Link>
           </li>
         </ul>
       </div>
