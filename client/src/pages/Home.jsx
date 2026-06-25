@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SocialLinks from '../components/SocialLinks.jsx';
-import { profile } from '../data/portfolio.js';
+
 
 export default function Home() {
   const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 });
@@ -41,7 +41,7 @@ export default function Home() {
             <Link to="/projects" className="px-8 py-4 bg-cyan-500 text-black font-bold uppercase tracking-wider hover:bg-cyan-400 transition-colors shadow-[0_0_20px_rgba(34,211,238,0.4)] relative z-20 rounded-lg">
               View Projects
             </Link>
-            <a href={profile.resume} target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-transparent border border-gray-700 text-white font-bold uppercase tracking-wider hover:border-cyan-500 hover:text-cyan-400 transition-all relative z-20 rounded-lg">
+            <a href="../public/Akshay_Bankar_Resume.pdf" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-transparent border border-gray-700 text-white font-bold uppercase tracking-wider hover:border-cyan-500 hover:text-cyan-400 transition-all relative z-20 rounded-lg">
               View Resume
             </a>
           </div>

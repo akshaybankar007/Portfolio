@@ -5,6 +5,8 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-a, button, input, textarea, select {
+@media (hover: hover) and (pointer: fine){
+body, a, button, input, textarea, select {
     cursor: none;
+}
 }

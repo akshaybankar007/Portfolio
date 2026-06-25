@@ -9,7 +9,6 @@ import Projects from './pages/Projects.jsx';
 import Skills from './pages/Skills.jsx';
 import Contact from './pages/Contact.jsx';
 import CustomCursor from './components/CustomCursor.jsx';
-import IntroScreen from './components/IntroScreen.jsx';
 
 export default function App() {
   const [introDone, setIntroDone] = useState(false);
@@ -18,7 +17,6 @@ export default function App() {
     <>
       <CustomCursor />
       
-      {!introDone && <IntroScreen onComplete={() => setIntroDone(true)} />}
       
       {/* Main app fades in right as the intro text lands in the navbar position */}
       <div className={`transition-opacity duration-700 ease-in ${introDone ? 'opacity-100' : 'opacity-0'}`}>

@@ -17,6 +17,9 @@ const __dirname = path.dirname(__filename);
 app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:5173' }));
 app.use(express.json());
 
+import rateLimit from 'express-rate-limit';
+const limiter = rateLimit({windowMs: 15 * 60 * 1000, max: 5, message: 'Too many requests.'});
+app.use('/api/contact', limiter);
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', service: 'portfolio-api' });
 });

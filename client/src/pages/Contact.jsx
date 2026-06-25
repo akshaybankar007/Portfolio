@@ -54,9 +54,10 @@ export default function Contact() {
 
           <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
             {status === 'success' && (
-              <div className="absolute inset-0 bg-black/90 backdrop-blur flex items-center justify-center z-20 border border-cyan-500">
-                <p className="text-cyan-400 font-mono text-lg animate-pulse">Payload delivered successfully.</p>
-              </div>
+          <div className="absolute inset-0 bg-black/90 backdrop-blur flex flex-col items-center justify-center z-20 border border-cyan-500">
+            <p className="text-cyan-400 font-mono text-lg animate-pulse mb-4">Payload delivered successfully.</p>
+            <button type="button" onClick={() => setStatus('idle')} className="px-4 py-1 text-xs uppercase tracking-widest border border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-black transition-colors">Dismiss</button>
+          </div>
             )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
