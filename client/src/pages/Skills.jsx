@@ -40,7 +40,7 @@ export default function Skills() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/portfolio/skills')
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/portfolio/skills`)
       .then((res) => res.json())
       .then((data) => {
         setSkills(data);

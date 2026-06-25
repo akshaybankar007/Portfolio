@@ -5,7 +5,7 @@ export default function Projects() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/portfolio/projects')
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/portfolio/projects`)
       .then((res) => res.json())
       .then((data) => {
         setProjects(data);
