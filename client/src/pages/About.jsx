@@ -29,7 +29,7 @@ export default function About() {
             style={{ background: `radial-gradient(800px circle at ${mousePos.x}px ${mousePos.y}px, rgba(34,211,238,0.08), transparent 40%)` }}
           />
 
-          <div className="text-gray-400 text-sm md:text-base leading-loose font-mono relative z-10">
+          <div className="text-gray-400 text-sm md:text-base leading-loose relative z-10">
             <p className="mb-6 border-b border-gray-800 pb-4">
               <span className="text-cyan-500 font-bold uppercase tracking-wider">Name:</span> <span className="text-white">Akshay Yogeshwar Bankar</span><br />
               <span className="text-cyan-500 font-bold uppercase tracking-wider">Base:</span> <span className="text-white">Nagpur, Maharashtra</span><br />

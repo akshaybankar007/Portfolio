@@ -26,7 +26,7 @@ export default function CustomCursor() {
 
   //this is the cursor customisation room
   return (
-    <div className="pointer-events-none z-9999 hidden md:block">
+    <div className="pointer-events-none z-9999 custom-cursor-wrapper">
 
       {/* Inner dot */}
       <div 

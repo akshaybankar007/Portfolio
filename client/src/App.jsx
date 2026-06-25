@@ -11,17 +11,13 @@ import Contact from './pages/Contact.jsx';
 import CustomCursor from './components/CustomCursor.jsx';
 
 export default function App() {
-  const [introDone, setIntroDone] = useState(false);
-
   return (
     <>
       <CustomCursor />
-      
-      
-      {/* Main app fades in right as the intro text lands in the navbar position */}
-      <div className={`transition-opacity duration-700 ease-in ${introDone ? 'opacity-100' : 'opacity-0'}`}>
+      <div className="transition-opacity duration-700 ease-in opacity-100">
         <Navbar />
-        <main className="pt-24 min-h-screen bg-[#030303] text-gray-200 font-sans selection:bg-cyan-500 selection:text-black">
+        {/* Changed bg-[#030303] to bg-zinc-950 and text-gray-200 to text-zinc-300 */}
+        <main className="pt-24 min-h-screen bg-zinc-950 text-zinc-300 font-sans selection:bg-indigo-500 selection:text-white">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

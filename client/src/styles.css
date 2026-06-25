@@ -1,12 +1,21 @@
 @import "tailwindcss";
 
 body {
-    cursor: none;
     font-family: 'Inter', sans-serif;
 }
 
-@media (hover: hover) and (pointer: fine){
-body, a, button, input, textarea, select {
-    cursor: none;
+/* Hide the custom SVG cursor by default (for mobile/touch devices) */
+.custom-cursor-wrapper {
+    display: none;
 }
+
+/* Only apply custom cursor logic on devices with a physical mouse/trackpad */
+@media (hover: hover) and (pointer: fine) {
+    .custom-cursor-wrapper {
+        display: block;
+    }
+    
+    body, a, button, input, textarea, select {
+        cursor: none;
+    }
 }
