@@ -101,7 +101,7 @@ export default function Contact() {
             >
               {status === 'loading' ? 'Transmitting...' : 'Execute POST Request'}
             </button>
-            
+                        
             {status === 'error' && <p className="text-red-500 font-mono text-xs mt-4">System fault: Packet drop detected. Try again.</p>}
           </form>
         </div>
