@@ -1,85 +1,35 @@
-# MERN Portfolio | Akshay Bankar
+# Akshay Bankar | Personal Portfolio
 
-Personal portfolio rebuilt with the MERN stack:
+A full-stack personal portfolio built with the MERN stack.
 
-- MongoDB stores contact form messages.
-- Express and Node.js expose the backend API.
-- React powers the frontend UI.
-- Vite runs the React development server.
-
-## Project Structure
-
-```text
-client/         React frontend
-server/         Express API and MongoDB models
-public/         Static assets used by the frontend
-```
+## Live Links
+- **Frontend:** [https://portfolio-frontend-3qe6.onrender.com]
+- **Backend API:** [https://portfolio-backend-u8ig.onrender.com]
+## Tech Stack
+- MongoDB, Express.js, React, Node.js
+- Vite
 
 ## Local Setup
 
-1. Install dependencies:
+1. **Install dependencies:**
+   ```bash
+   npm run install-all
+   ```
 
-```bash
-npm run install-all
-```
+2. **Environment Setup (`server/.env`):**
+   ```env
+   REQUIRE_MONGO=true
+   MONGO_URI=your_mongodb_atlas_connection_string
+   EMAIL_USER=akshaybankar076@gmail.com
+   EMAIL_PASS=your_email_password
+   ```
 
-2. Create a server environment file:
+3. **Run application:**
+   ```bash
+   npm run dev
+   ```
 
-```bash
-copy server\.env.example server\.env
-```
-
-3. Update `server/.env` with your MongoDB connection string.
-   If MongoDB is not available locally yet, the app still runs and stores contact
-   messages in `server/data/contact-messages.json` during development.
-
-4. Run the full MERN app:
-
-```bash
-npm run dev
-```
-
-The frontend runs on `http://localhost:5173`.
-The backend runs on `http://localhost:5000`.
-
-## Database Setup
-
-For local development, the default `.env` points to:
-
-```env
-MONGO_URI=mongodb://127.0.0.1:27017/akshay-portfolio
-```
-
-If MongoDB is not running, the server automatically falls back to local JSON
-storage so you can keep working. For deployment, use MongoDB Atlas and set:
-
-```env
-REQUIRE_MONGO=true
-MONGO_URI=your_mongodb_atlas_connection_string
-```
-
-## Useful Commands
-
-```bash
-npm run client
-npm run server
-npm run build
-npm start
-```
-
-## API Routes
-
-```text
-GET  /api/health
-POST /api/contact
-```
-
-`POST /api/contact` accepts:
-
-```json
-{
-  "name": "Your Name",
-  "email": "you@example.com",
-  "message": "Your message"
-}
-```
+## Connect With Me
+- **LinkedIn:** [Akshay Bankar](https://www.linkedin.com/in/akshay--bankar)
+- **GitHub:** [@akshaybankar007](https://github.com/akshaybankar007)
+- **Email:** akshaybankar076@gmail.com
