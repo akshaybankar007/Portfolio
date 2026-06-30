@@ -37,9 +37,9 @@ export default function Contact() {
       <div className="max-w-3xl mx-auto w-full">
         <div className="mb-16 border-l-4 border-cyan-500 pl-6">
           <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase">
-            Establish Uplink
+            Contact
           </h2>
-          <p className="text-gray-500 mt-2 font-mono text-sm">Send payload to server.</p>
+          <p className="text-gray-500 mt-2 font-mono text-sm">Connect with us</p>
         </div>
 
         <div 
@@ -62,7 +62,7 @@ export default function Contact() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-xs font-mono text-cyan-500 uppercase">Variable: Name</label>
+                <label className="text-xs font-mono text-cyan-500 uppercase">Name:</label>
                 <input 
                   type="text" 
                   required
@@ -72,7 +72,7 @@ export default function Contact() {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-mono text-cyan-500 uppercase">Variable: Email</label>
+                <label className="text-xs font-mono text-cyan-500 uppercase">Email:</label>
                 <input 
                   type="email" 
                   required
@@ -84,7 +84,7 @@ export default function Contact() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-mono text-cyan-500 uppercase">Variable: Message</label>
+              <label className="text-xs font-mono text-cyan-500 uppercase">Message:</label>
               <textarea 
                 rows="5"
                 required
@@ -99,9 +99,9 @@ export default function Contact() {
               disabled={status === 'loading'}
               className="w-full py-4 bg-[#030303] border-2 border-cyan-500 text-cyan-500 font-bold uppercase tracking-widest hover:bg-cyan-500 hover:text-black transition-all shadow-[0_0_10px_rgba(34,211,238,0.1)] hover:shadow-[0_0_25px_rgba(34,211,238,0.6)] disabled:opacity-50 rounded-sm relative z-20"
             >
-              {status === 'loading' ? 'Transmitting...' : 'Execute POST Request'}
+              {status === 'loading' ? 'Transmitting...' : 'send message'}
             </button>
-                        
+
             {status === 'error' && <p className="text-red-500 font-mono text-xs mt-4">System fault: Packet drop detected. Try again.</p>}
           </form>
         </div>

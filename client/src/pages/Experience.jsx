@@ -63,7 +63,7 @@ export default function Experience() {
       <div className="max-w-4xl mx-auto">
         <div className="mb-16 border-l-4 border-cyan-500 pl-6">
           <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase">
-            Runtime History
+            Internship Experience
           </h2>
         </div>
 

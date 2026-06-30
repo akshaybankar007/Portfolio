@@ -22,9 +22,8 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto">
         <div className="mb-16 border-l-4 border-cyan-500 pl-6">
           <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase">
-            Compiled Work
+            PROJECTS
           </h2>
-          <p className="text-gray-500 mt-2 font-mono text-sm">Target directory: /usr/local/projects</p>
         </div>
         
         {loading ? (
@@ -32,7 +31,7 @@ export default function Projects() {
         ) : (
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project) => (
-              <article key={project._id} className="bg-[#0a0a0a] border border-gray-800 p-8 hover:border-cyan-500/50 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden">
+              <article key={project._id} className="bg-[#0a0a0a] border border-gray-800 p-8 hover:border-cyan-500/50 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden rounded-xl">
                 <div className="absolute top-0 right-0 w-16 h-16 bg-cyan-500/10 blur-2xl group-hover:bg-cyan-500/30 transition-all"></div>
                 
                 <div className="z-10">

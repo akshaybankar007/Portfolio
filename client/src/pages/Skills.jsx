@@ -57,7 +57,7 @@ export default function Skills() {
       <div className="max-w-5xl mx-auto">
         <div className="mb-16 border-l-4 border-cyan-500 pl-6">
           <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase">
-            System Arsenal
+            Technical Skills
           </h2>
         </div>
 
